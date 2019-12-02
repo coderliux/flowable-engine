@@ -346,9 +346,6 @@
 			<fileset dir="../modules/flowable-ui-task/flowable-ui-task-rest/target">
 				<include name="flowable-ui-task-rest-*.jar" />
 			</fileset>
-			<fileset dir="../modules/flowable-osgi/target">
-				<include name="flowable-osgi-*.jar" />
-			</fileset>
 			<fileset dir="../modules/flowable-jmx/target">
 				<include name="flowable-jmx-*.jar" />
 			</fileset>

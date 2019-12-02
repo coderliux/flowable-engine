@@ -1292,10 +1292,6 @@
 				<module>modules/flowable-idm-spring-configurator</module>
                 <module>modules/flowable-idm-rest</module>
 				<module>modules/flowable-spring</module>
-				<module>modules/flowable5-engine</module>
-				<module>modules/flowable5-compatibility</module>
-				<module>modules/flowable5-spring</module>
-				<module>modules/flowable5-spring-compatibility</module>
 				<module>modules/flowable-spring-boot</module>
 				<module>modules/flowable-cxf</module>
 				<module>modules/flowable-mule</module>
@@ -1314,7 +1310,6 @@
 				<module>modules/flowable-ui-modeler</module>
 				<module>modules/flowable-ui-task</module>
 				<module>modules/flowable-ui-admin</module>
-				<module>tooling/archetypes/flowable-archetype-unittest</module>
 			</modules>
 			<build>
 				<plugins>
