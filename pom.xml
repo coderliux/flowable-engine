@@ -43,43 +43,6 @@
 
         <!-- JVM params for test execution -->
 		<argLine>-Duser.language=en -XX:+UseParallelGC</argLine>
-
-		<!-- OSGi bundles properties -->
-		<flowable.artifact />
-		<flowable.osgi.import.flowable.version>version="[$(version;==;${flowable.osgi.version.clean}),$(version;=+;${flowable.osgi.version.clean}))"</flowable.osgi.import.flowable.version>
-		<flowable.osgi.import.strict.version>version="[$(version;===;${flowable.osgi.version.clean}),$(version;==+;${flowable.osgi.version.clean}))"</flowable.osgi.import.strict.version>
-		<flowable.osgi.import.default.version>[$(version;==;$(@)),$(version;+;$(@)))</flowable.osgi.import.default.version>
-		<flowable.osgi.import.defaults>
-		</flowable.osgi.import.defaults>
-		<flowable.osgi.import.before.defaults />
-		<flowable.osgi.import.additional />
-		<flowable.osgi.export.additional />
-		<flowable.osgi.import.pkg>
-			org.flowable.*;${flowable.osgi.import.flowable.version},
-			${flowable.osgi.import.before.defaults},
-			${flowable.osgi.import.defaults},
-			${flowable.osgi.import.additional},
-			*
-		</flowable.osgi.import.pkg>
-		<flowable.osgi.activator />
-		<flowable.osgi.failok>false</flowable.osgi.failok>
-		<flowable.osgi.export>${flowable.osgi.export.pkg};${flowable.osgi.version};-noimport:=true</flowable.osgi.export>
-		<!-- <flowable.osgi.export.pkg>!*.impl;${flowable.artifact}*</flowable.osgi.export.pkg>
-			<flowable.osgi.private.pkg>${flowable.artifact}*.impl</flowable.osgi.private.pkg> -->
-		<flowable.osgi.export.pkg>
-			${flowable.artifact}*,
-			${flowable.osgi.export.additional}
-		</flowable.osgi.export.pkg>
-		<flowable.osgi.private.pkg></flowable.osgi.private.pkg>
-		<flowable.osgi.version>version=${project.version}</flowable.osgi.version>
-		<flowable.osgi.split.pkg>-split-package:=first</flowable.osgi.split.pkg>
-		<flowable.osgi.import>${flowable.osgi.import.pkg}</flowable.osgi.import>
-		<flowable.osgi.dynamic />
-		<flowable.osgi.symbolic.name>${flowable.artifact}</flowable.osgi.symbolic.name>
-		<flowable.osgi.exclude.dependencies>false</flowable.osgi.exclude.dependencies>
-		<flowable.osgi.remove.headers>Ignore-Package,Include-Resource,Private-Package,Bundle-DocURL</flowable.osgi.remove.headers>
-		<flowable.osgi.include.resource>{maven-resources}</flowable.osgi.include.resource>
-		<flowable.osgi.embed></flowable.osgi.embed>
 	</properties>
 
 	<dependencyManagement>
@@ -609,18 +572,8 @@
 			</dependency>
 			<dependency>
 				<groupId>org.flowable</groupId>
-				<artifactId>flowable-crystalball</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.flowable</groupId>
 				<artifactId>flowable-app-rest</artifactId>
 				<type>war</type>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.flowable</groupId>
-				<artifactId>flowable-cxf</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -643,26 +596,7 @@
 				<artifactId>flowable-image-generator</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.flowable</groupId>
-				<artifactId>flowable5-engine</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.flowable</groupId>
-				<artifactId>flowable5-spring</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.flowable</groupId>
-				<artifactId>flowable5-compatibility</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.flowable</groupId>
-				<artifactId>flowable5-spring-compatibility</artifactId>
-				<version>${project.version}</version>
-			</dependency>
+
 			<dependency>
 				<groupId>org.flowable</groupId>
 				<artifactId>flowable-jmx</artifactId>
@@ -686,31 +620,6 @@
 			</dependency>
 			<!-- Web service -->
 			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-frontend-jaxws</artifactId>
-				<version>${cxf.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-transports-http</artifactId>
-				<version>${cxf.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-transports-http-jetty</artifactId>
-				<version>${cxf.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-bindings-soap</artifactId>
-				<version>${cxf.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.geronimo.specs</groupId>
-				<artifactId>geronimo-jta_1.1_spec</artifactId>
-				<version>1.1.1</version>
-			</dependency>
-			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-core</artifactId>
 				<version>5.3.5.Final</version>
@@ -730,16 +639,7 @@
 				<artifactId>drools-compiler</artifactId>
 				<version>7.6.0.Final</version>
 			</dependency>
-			<dependency>
-				<groupId>org.mule.modules</groupId>
-				<artifactId>mule-module-cxf</artifactId>
-				<version>${mule.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mule.tests</groupId>
-				<artifactId>mule-tests-functional</artifactId>
-				<version>${mule.version}</version>
-			</dependency>
+
 			<dependency>
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
@@ -767,18 +667,6 @@
 				<version>${mockito.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>org.osgi</groupId>
-				<artifactId>org.osgi.core</artifactId>
-				<version>6.0.0</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.osgi</groupId>
-				<artifactId>org.osgi.compendium</artifactId>
-				<version>5.0.0</version>
-				<scope>provided</scope>
-			</dependency>
 			<dependency>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>org.apache.felix.fileinstall</artifactId>
@@ -960,22 +848,7 @@
 				<artifactId>jackson-datatype-joda</artifactId>
 				<version>${jackson.version}</version>
 			</dependency>
-			<!-- Camel integration -->
-			<dependency>
-				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-spring</artifactId>
-				<version>${camel.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-mvel</artifactId>
-				<version>${camel.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-cdi</artifactId>
-				<version>${camel.version}</version>
-			</dependency>
+
 			<dependency>
 				<groupId>com.fasterxml.uuid</groupId>
 				<artifactId>java-uuid-generator</artifactId>
@@ -1050,6 +923,11 @@
 		<module>modules/flowable-app-engine-api</module>
 		<module>modules/flowable-app-engine</module>
 		<module>modules/flowable-spring-security</module>
+		<module>modules/flowable-ui-admin</module>
+		<module>modules/flowable-ui-common</module>
+		<module>modules/flowable-ui-modeler</module>
+		<module>modules/flowable-ui-task</module>
+		<module>modules/flowable-ui-idm</module>
 	</modules>
 
 	<build>
@@ -1100,9 +978,6 @@
 						<_versionpolicy>${flowable.osgi.import.default.version}</_versionpolicy>
 						<_removeheaders>${flowable.osgi.remove.headers}</_removeheaders>
 						<_failok>${flowable.osgi.failok}</_failok>
-						<Export-Service>${flowable.osgi.export.service}</Export-Service>
-						<Import-Service>${flowable.osgi.import.service}</Import-Service>
-						<Embed-Dependency>${flowable.osgi.embed}</Embed-Dependency>
 					</instructions>
 					<versions>
 						<flowable.osgi.version.clean>${project.version}</flowable.osgi.version.clean>
@@ -1292,29 +1167,17 @@
 				<module>modules/flowable-idm-spring-configurator</module>
                 <module>modules/flowable-idm-rest</module>
 				<module>modules/flowable-spring</module>
-				<module>modules/flowable5-engine</module>
-				<module>modules/flowable5-compatibility</module>
-				<module>modules/flowable5-spring</module>
-				<module>modules/flowable5-spring-compatibility</module>
 				<module>modules/flowable-spring-boot</module>
-				<module>modules/flowable-cxf</module>
-				<module>modules/flowable-mule</module>
 				<module>modules/flowable-http</module>
-				<module>modules/flowable-camel</module>
-				<module>modules/flowable-camel-cdi</module>
-				<module>modules/flowable-cdi</module>
-				<module>modules/flowable-osgi</module>
 				<module>modules/flowable-ldap</module>
 				<module>modules/flowable-ldap-configurator</module>
 				<module>modules/flowable-jmx</module>
-				<module>modules/flowable-jms-spring-executor</module>
 				<module>modules/flowable-ui-common</module>
 				<module>modules/flowable-ui-edge</module>
 				<module>modules/flowable-ui-idm</module>
 				<module>modules/flowable-ui-modeler</module>
 				<module>modules/flowable-ui-task</module>
 				<module>modules/flowable-ui-admin</module>
-				<module>tooling/archetypes/flowable-archetype-unittest</module>
 			</modules>
 			<build>
 				<plugins>
@@ -1379,7 +1242,6 @@
 				<module>modules/flowable-groovy-script-static-engine</module>
 				<module>modules/flowable-common-rest</module>
 				<module>modules/flowable-rest</module>
-				<module>modules/flowable-cxf</module>
 				<module>modules/flowable-secure-javascript</module>
 				<module>modules/flowable-form-json-converter</module>
                 <module>modules/flowable-engine-configurator</module>
@@ -1415,17 +1277,10 @@
 				<module>modules/flowable-content-rest</module>
                 <module>modules/flowable-http</module>
                 <module>modules/flowable-spring-boot</module>
-				<module>modules/flowable-jms-spring-executor</module>
 				<module>modules/flowable-ui-common</module>
 			</modules>
 		</profile>
-		<profile>
-			<id>checkmule</id>
-			<modules>
-				<module>modules/flowable-cxf</module>
-				<module>modules/flowable-mule</module>
-			</modules>
-		</profile>
+
 		<profile>
 			<id>checkspring</id> <!-- [Joram] Is this still used?? -->
 			<modules>
@@ -1434,18 +1289,7 @@
 				<module>modules/flowable-spring</module>
 			</modules>
 		</profile>
-		<profile>
-			<id>checkcdi</id>
-			<modules>
-				<module>modules/flowable-cdi</module>
-			</modules>
-		</profile>
-		<profile>
-			<id>checkosgi</id>
-			<modules>
-				<module>modules/flowable-osgi</module>
-			</modules>
-		</profile>
+
 		<profile>
 			<!-- this profile prevents that tests are executed while running the qa/build.xml
 				test.demo.setup target -->
@@ -1535,29 +1379,17 @@
                 <module>modules/flowable-cmmn-spring</module>
                 <module>modules/flowable-cmmn-spring-configurator</module>
                 <module>modules/flowable-cmmn-rest</module>
-				<module>modules/flowable5-engine</module>
-				<module>modules/flowable5-compatibility</module>
-				<module>modules/flowable5-spring</module>
-				<module>modules/flowable5-spring-compatibility</module>
 				<module>modules/flowable-spring-boot</module>
 				<module>modules/flowable-common-rest</module>
 				<module>modules/flowable-rest</module>
 				<module>modules/flowable-app-rest</module>
-				<module>modules/flowable-cxf</module>
-				<module>modules/flowable-osgi</module>
-				<module>modules/flowable-camel</module>
-				<module>modules/flowable-mule</module>
 				<module>modules/flowable-http</module>
-				<module>modules/flowable-cdi</module>
-				<module>modules/flowable-camel-cdi</module>
 				<module>modules/flowable-ldap</module>
 				<module>modules/flowable-ldap-configurator</module>
 				<module>modules/flowable-jmx</module>
-				<module>modules/flowable-jms-spring-executor</module>
-				<module>modules/flowable-crystalball</module>
 				<module>modules/flowable-ui-common</module>
 				<module>modules/flowable-ui-edge</module>
-				<module>tooling/archetypes/flowable-archetype-unittest</module>
+
 			</modules>
 		</profile>
 		<profile>
