@@ -1173,9 +1173,9 @@
 				<module>modules/flowable-ldap-configurator</module>
 				<module>modules/flowable-jmx</module>
 				<module>modules/flowable-ui-common</module>
-				<module>modules/flowable-ui-edge</module>
-				<module>modules/flowable-ui-idm</module>
 				<module>modules/flowable-ui-modeler</module>
+				<module>modules/flowable-ui-idm</module>
+				<module>modules/flowable-ui-edge</module>
 				<module>modules/flowable-ui-task</module>
 				<module>modules/flowable-ui-admin</module>
 			</modules>
@@ -1223,86 +1223,8 @@
 				</plugins>
 			</build>
 		</profile>
-		<profile>
-			<id>check</id>
-			<modules>
-				<module>modules/flowable-bpmn-model</module>
-				<module>modules/flowable-process-validation</module>
-				<module>modules/flowable-image-generator</module>
-				<module>modules/flowable-bpmn-converter</module>
-				<module>modules/flowable-bpmn-layout</module>
-				<module>modules/flowable-json-converter</module>
-                <module>modules/flowable-spring-common</module>
-				<module>modules/flowable-idm-engine-configurator</module>
-				<module>modules/flowable-idm-spring</module>
-				<module>modules/flowable-idm-spring-configurator</module>
-                <module>modules/flowable-idm-rest</module>
-                <module>modules/flowable-ldap</module>
-				<module>modules/flowable-spring</module>
-				<module>modules/flowable-groovy-script-static-engine</module>
-				<module>modules/flowable-common-rest</module>
-				<module>modules/flowable-rest</module>
-				<module>modules/flowable-secure-javascript</module>
-				<module>modules/flowable-form-json-converter</module>
-                <module>modules/flowable-engine-configurator</module>
-                <module>modules/flowable-spring-configurator</module>
-                <module>modules/flowable-app-engine-spring</module>
-                <module>modules/flowable-app-engine-rest</module>
-				<module>modules/flowable-form-engine</module>
-				<module>modules/flowable-form-engine-configurator</module>
-				<module>modules/flowable-form-spring</module>
-				<module>modules/flowable-form-spring-configurator</module>
-				<module>modules/flowable-form-rest</module>
-				<module>modules/flowable-dmn-engine</module>
-				<module>modules/flowable-dmn-model</module>
-				<module>modules/flowable-dmn-json-converter</module>
-				<module>modules/flowable-dmn-xml-converter</module>
-				<module>modules/flowable-dmn-engine-configurator</module>
-				<module>modules/flowable-dmn-spring</module>
-				<module>modules/flowable-dmn-spring-configurator</module>
-				<module>modules/flowable-dmn-rest</module>
-                <module>modules/flowable-cmmn-api</module>
-                <module>modules/flowable-cmmn-model</module>
-                <module>modules/flowable-cmmn-converter</module>
-                <module>modules/flowable-cmmn-json-converter</module>
-                <module>modules/flowable-cmmn-engine</module>
-                <module>modules/flowable-cmmn-engine-configurator</module>
-                <module>modules/flowable-cmmn-spring</module>
-                <module>modules/flowable-cmmn-spring-configurator</module>
-                <module>modules/flowable-cmmn-rest</module>
-				<module>modules/flowable-content-engine</module>
-				<module>modules/flowable-content-engine-configurator</module>
-				<module>modules/flowable-content-spring</module>
-				<module>modules/flowable-content-spring-configurator</module>
-				<module>modules/flowable-content-rest</module>
-                <module>modules/flowable-http</module>
-                <module>modules/flowable-spring-boot</module>
-				<module>modules/flowable-ui-common</module>
-			</modules>
-		</profile>
 
-		<profile>
-			<id>checkspring</id> <!-- [Joram] Is this still used?? -->
-			<modules>
-                <module>modules/flowable-spring-common</module>
-				<module>modules/flowable-idm-spring</module>
-				<module>modules/flowable-spring</module>
-			</modules>
-		</profile>
 
-		<profile>
-			<!-- this profile prevents that tests are executed while running the qa/build.xml
-				test.demo.setup target -->
-			<id>nodocs</id>
-			<activation>
-				<property>
-					<name>nodocs</name>
-				</property>
-			</activation>
-			<properties>
-				<skipTests>true</skipTests>
-			</properties>
-		</profile>
         <profile>
             <id>coverage</id>
             <build>
@@ -1389,7 +1311,10 @@
 				<module>modules/flowable-jmx</module>
 				<module>modules/flowable-ui-common</module>
 				<module>modules/flowable-ui-edge</module>
-
+				<module>modules/flowable-ui-modeler</module>
+				<module>modules/flowable-ui-idm</module>
+				<module>modules/flowable-ui-task</module>
+				<module>modules/flowable-ui-admin</module>
 			</modules>
 		</profile>
 		<profile>
