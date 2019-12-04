@@ -917,17 +917,12 @@
         <module>modules/flowable-cmmn-model</module>
         <module>modules/flowable-cmmn-converter</module>
         <module>modules/flowable-cmmn-image-generator</module>
-        <module>modules/flowable-cmmn-engine</module>
-		<module>modules/flowable-cmmn-engine-configurator</module>
 		<module>modules/flowable-engine</module>
 		<module>modules/flowable-app-engine-api</module>
 		<module>modules/flowable-app-engine</module>
 		<module>modules/flowable-spring-security</module>
-		<module>modules/flowable-ui-admin</module>
 		<module>modules/flowable-ui-common</module>
 		<module>modules/flowable-ui-modeler</module>
-		<module>modules/flowable-ui-task</module>
-		<module>modules/flowable-ui-idm</module>
 	</modules>
 
 	<build>
@@ -962,22 +957,10 @@
 				<version>3.5.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<excludeDependencies>${flowable.osgi.exclude.dependencies}</excludeDependencies>
 					<instructions>
 						<Bundle-Name>${project.name}</Bundle-Name>
-						<Bundle-SymbolicName>${flowable.osgi.symbolic.name}</Bundle-SymbolicName>
-						<Bundle-Activator>${flowable.osgi.activator}</Bundle-Activator>
-						<Export-Package>${flowable.osgi.export}</Export-Package>
-						<Import-Package>org.flowable.osgi;resolution:=optional,
-							${flowable.osgi.import}</Import-Package>
-						<DynamicImport-Package>${flowable.osgi.dynamic}</DynamicImport-Package>
-						<Private-Package>${flowable.osgi.private.pkg}</Private-Package>
 						<Implementation-Title>Flowable</Implementation-Title>
 						<Implementation-Version>${project.version}</Implementation-Version>
-						<Include-Resource>${flowable.osgi.include.resource}</Include-Resource>
-						<_versionpolicy>${flowable.osgi.import.default.version}</_versionpolicy>
-						<_removeheaders>${flowable.osgi.remove.headers}</_removeheaders>
-						<_failok>${flowable.osgi.failok}</_failok>
 					</instructions>
 					<versions>
 						<flowable.osgi.version.clean>${project.version}</flowable.osgi.version.clean>
@@ -1113,118 +1096,6 @@
 				<maven.test.failure.ignore>true</maven.test.failure.ignore>
 			</properties>
 		</profile>
-		<profile>
-			<id>deploy</id>
-			<modules>
-				<module>modules/flowable-bpmn-model</module>
-				<module>modules/flowable-process-validation</module>
-				<module>modules/flowable-image-generator</module>
-				<module>modules/flowable-bpmn-converter</module>
-				<module>modules/flowable-engine</module>
-				<module>modules/flowable-secure-javascript</module>
-				<module>modules/flowable-groovy-script-static-engine</module>
-				<module>modules/flowable-bpmn-layout</module>
-				<module>modules/flowable-json-converter</module>
-                <module>modules/flowable-spring-common</module>
-                <module>modules/flowable-engine-configurator</module>
-                <module>modules/flowable-spring-configurator</module>
-                <module>modules/flowable-app-engine-spring</module>
-                <module>modules/flowable-app-engine-rest</module>
-				<module>modules/flowable-dmn-model</module>
-				<module>modules/flowable-dmn-json-converter</module>
-				<module>modules/flowable-dmn-xml-converter</module>
-				<module>modules/flowable-dmn-engine</module>
-				<module>modules/flowable-dmn-engine-configurator</module>
-				<module>modules/flowable-dmn-spring</module>
-				<module>modules/flowable-dmn-spring-configurator</module>
-				<module>modules/flowable-dmn-rest</module>
-                <module>modules/flowable-cmmn-api</module>
-                <module>modules/flowable-cmmn-model</module>
-                <module>modules/flowable-cmmn-converter</module>
-                <module>modules/flowable-cmmn-json-converter</module>
-                <module>modules/flowable-cmmn-engine</module>
-                <module>modules/flowable-cmmn-engine-configurator</module>
-                <module>modules/flowable-cmmn-spring</module>
-                <module>modules/flowable-cmmn-spring-configurator</module>
-                <module>modules/flowable-cmmn-rest</module>
-				<module>modules/flowable-form-model</module>
-				<module>modules/flowable-form-json-converter</module>
-				<module>modules/flowable-form-engine</module>
-				<module>modules/flowable-form-engine-configurator</module>
-				<module>modules/flowable-form-spring</module>
-				<module>modules/flowable-form-spring-configurator</module>
-				<module>modules/flowable-form-rest</module>
-				<module>modules/flowable-content-engine</module>
-				<module>modules/flowable-content-engine-configurator</module>
-				<module>modules/flowable-content-spring</module>
-				<module>modules/flowable-content-spring-configurator</module>
-				<module>modules/flowable-content-rest</module>
-				<module>modules/flowable-common-rest</module>
-				<module>modules/flowable-rest</module>
-				<module>modules/flowable-app-rest</module>
-				<module>modules/flowable-idm-engine-configurator</module>
-				<module>modules/flowable-idm-spring</module>
-				<module>modules/flowable-idm-spring-configurator</module>
-                <module>modules/flowable-idm-rest</module>
-				<module>modules/flowable-spring</module>
-				<module>modules/flowable-spring-boot</module>
-				<module>modules/flowable-http</module>
-				<module>modules/flowable-ldap</module>
-				<module>modules/flowable-ldap-configurator</module>
-				<module>modules/flowable-jmx</module>
-				<module>modules/flowable-ui-common</module>
-				<module>modules/flowable-ui-modeler</module>
-				<module>modules/flowable-ui-idm</module>
-				<module>modules/flowable-ui-edge</module>
-				<module>modules/flowable-ui-task</module>
-				<module>modules/flowable-ui-admin</module>
-			</modules>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<configuration>
-							<additionalparam>-Xdoclint:none</additionalparam>
-						</configuration>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-
         <profile>
             <id>coverage</id>
             <build>

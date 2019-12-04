@@ -16,7 +16,6 @@
 
     <modules>
         <module>flowable-spring-boot-starters</module>
-        <module>flowable-spring-boot-samples</module>
     </modules>
 
     <properties>

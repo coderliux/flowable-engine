@@ -42,4 +42,12 @@ public class RemoteToken {
         this.userId = userId;
     }
 
+    @Override
+    public String toString() {
+        return "RemoteToken{" +
+                "id='" + id + '\'' +
+                ", value='" + value + '\'' +
+                ", userId='" + userId + '\'' +
+                '}';
+    }
 }
